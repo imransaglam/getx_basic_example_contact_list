@@ -32,18 +32,12 @@ class HomeScreen extends StatelessWidget {
               }, icon: Icon(Icons.delete),color: Colors.red,),
             ));
         }),)),
-        GestureDetector(
-          onTap: (){
-            Get.to(()=>AddContactScreen());
-          },
-          child: Container(
-            alignment: Alignment.center,
-            color:Colors.blue,
-            width: 100,
-            height: 50,
-            child: Text("Add",style: TextStyle(color: Colors.white,fontSize: 10),),
-          ))
+       
       ]),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Get.to(()=>AddContactScreen());
+      },
+      child: Icon(Icons.add),),
     );
   }
 }

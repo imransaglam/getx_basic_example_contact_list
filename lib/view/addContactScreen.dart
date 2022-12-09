@@ -18,7 +18,16 @@ TextEditingController emailController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text("Add Contact List") ,),
+      appBar: AppBar(
+        title:Text("Add Contact List"),
+        actions: [
+       IconButton(onPressed: (){
+            appData.changeTheme();
+          },
+            icon:Icon(Icons.settings)
+            )
+        ],
+        ),
       body: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
@@ -50,19 +59,16 @@ TextEditingController emailController=TextEditingController();
               ),
             ),
             const  SizedBox(height: 10,),
-            GestureDetector(
-          onTap: (){
-            ContactModel model=ContactModel(name: nameController.text, phone: phoneController.text, email: emailController.text);
+        
+        FloatingActionButton(
+          onPressed: (){
+           ContactModel model=ContactModel(name: nameController.text, phone: phoneController.text, email: emailController.text);
             appData.addContact(model);
-          },
-          child: Container(
-             alignment: Alignment.center,
-            color:Colors.blue,
-            width: 100,
-            height: 50,
-            child: Text("Add",style: TextStyle(color: Colors.white,fontSize: 10),),
-          ))
-      ],),),
+        },child: Icon(Icons.add),)
+      ],
+      ),
+
+      ),
     );
   }
 }

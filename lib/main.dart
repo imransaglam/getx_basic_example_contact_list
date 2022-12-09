@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:getxcontactlist/theme/dark_theme.dart';
+import 'package:getxcontactlist/theme/light_theme.dart';
 import 'package:getxcontactlist/view/homescreen.dart';
 
 void main() {
@@ -12,6 +14,9 @@ class CantactListExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }
